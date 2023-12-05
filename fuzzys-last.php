@@ -13,9 +13,13 @@ class Fuzzys_Last{
     $this->init_ajax();
 	}
   private function load_game(){
-    
+    $this->fuzzy = $this->load_fuzzy;
   }
   private init_ajax(){
-    
+    add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
+		add_action( 'wp_ajax_nopriv_guess', array($this,'ajax_guess') );
   }
+	private ajax_guess(){
+		
+	}
 }
