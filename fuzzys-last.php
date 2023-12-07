@@ -13,13 +13,21 @@ class Fuzzys_Last{
     $this->init_ajax();
 	}
   private function load_game(){
-    $this->fuzzy = $this->load_fuzzy;
+    $this->fuzzy = $this->load_fuzzy();
+  }
+  private load_fuzzy(){
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Collection.php";
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Fuzz.php";
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Process.php";
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/StringProcessor.php";
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Utils.php";
+    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Diff/SequenceMatcher.php";
   }
   private init_ajax(){
     add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
 		add_action( 'wp_ajax_nopriv_guess', array($this,'ajax_guess') );
   }
 	private ajax_guess(){
-		
+		die();
 	}
 }
