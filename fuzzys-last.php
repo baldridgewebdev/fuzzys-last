@@ -17,12 +17,7 @@ class Fuzzys_Last{
     $this->fuzzy = $this->load_fuzzy();
   }
   private function load_fuzzy(){
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Collection.php";
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Fuzz.php";
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Process.php";
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/StringProcessor.php";
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Utils.php";
-    require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Diff/SequenceMatcher.php";
+    require_once __DIR__ . "/fuzzy.php";
   }
   private init_ajax(){
     add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
