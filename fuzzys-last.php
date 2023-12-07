@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name:       Fuzzy's Last
  * Plugin URI:        https://baldridgeweb.dev
