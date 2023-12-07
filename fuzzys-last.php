@@ -16,7 +16,7 @@ class Fuzzys_Last{
   private function load_game(){
     $this->fuzzy = $this->load_fuzzy();
   }
-  private load_fuzzy(){
+  private function load_fuzzy(){
     require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Collection.php";
     require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Fuzz.php";
     require_once __DIR__ . "/libraries/fuzzywuzzy/lib/Process.php";
@@ -32,3 +32,4 @@ class Fuzzys_Last{
 		die();
 	}
 }
+$fuzzys = new Fuzzys_Last();
