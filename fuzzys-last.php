@@ -16,6 +16,7 @@ class Fuzzys_Last{
     $this->init_ajax();
     $this->init_classes();
     $this->init_scripts();
+    $this->init_shortcodes();
   }
   private function init_classes(){
     require_once __DIR__ . '/classes/model.php';
@@ -27,6 +28,9 @@ class Fuzzys_Last{
       wp_enqueue_script( 'fuzzys-last-behaviours', plugins_url( '/assets/behaviours.js' , __FILE__ ), array( 'jquery' ) );
       wp_enqueue_style( 'fuzzys-last-style', plugins_url( '/assets/style.css' , __FILE__ ));
     } );
+  }
+  private function init_shortcodes(){
+    add_shortcode('fuzzys_last', array($this->view,'fuzzys_last_gameboard'));
   }
   private function init_ajax(){
     add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
