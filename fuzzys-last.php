@@ -15,11 +15,18 @@ class Fuzzys_Last{
   public function __construct(  ) {
     $this->init_ajax();
     $this->init_classes();
+    $this->init_scripts();
   }
   private function init_classes(){
     require_once __DIR__ . '/classes/model.php';
     require_once __DIR__ . '/classes/view.php';
     $this->view = new Fuzzys_Last_View();
+  }
+  private function init_scripts(){
+    add_action( 'wp_enqueue_scripts', function(){
+      wp_enqueue_script( 'fuzzys-last-behaviours', plugins_url( '/assets/behaviours.js' , __FILE__ ), array( 'jquery' ) );
+      wp_enqueue_style( 'fuzzys-last-style', plugins_url( '/assets/style.css' , __FILE__ ));
+    } );
   }
   private function init_ajax(){
     add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
