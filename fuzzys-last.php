@@ -11,9 +11,20 @@
 
 class Fuzzys_Last{
   private $cookie_name = 'fuzzys_last';
+  private $view;
   public function __construct(  ) {
-      $this->init_ajax();
-    }
+    $this->init_ajax();
+    $this->init_classes();
+  }
+  private function init_classes(){
+    require_once __DIR__ . '/classes/model.php';
+    require_once __DIR__ . '/classes/view.php';
+    $this->view = new Fuzzys_Last_View();
+  }
+  private function init_ajax(){
+    add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
+    add_action( 'wp_ajax_nopriv_guess', array($this,'ajax_guess') );
+  }
   private function load_game(){
     
   }
@@ -31,10 +42,6 @@ class Fuzzys_Last{
     asort($results); // Sort results by distance (lower is better)
 
     return $results;
-  }
-  private function init_ajax(){
-    add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
-    add_action( 'wp_ajax_nopriv_guess', array($this,'ajax_guess') );
   }
   private function ajax_guess(){
     $this->load_game();
