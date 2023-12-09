@@ -48,7 +48,7 @@ class Fuzzys_Last_Model{
   }
   private function generate_new_seed($seed_length=5){
     $seed = "";
-    for($i = 0; $i < $seed_length; $i++;){
+    for($i = 0; $i < $seed_length; $i++){
       $seed += $this->generate_seed_part();
     }
     return $seed;
