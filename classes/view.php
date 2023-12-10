@@ -4,7 +4,11 @@ class Fuzzys_Last_View{
   function __construct(){
     
   }
+<<<<<<< HEAD
   public function fuzzys_last_gameboard($word_count = 5, $word_length = 5){
+=======
+  public function fuzzys_last_gameboard($word_count, $word_length){
+>>>>>>> c10b08cff96dc4487c76e4fb41586fb8df546d5e
     $html = '
     <div class="fuzzys-last">
       <div class="gameboard">
