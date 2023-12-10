@@ -30,7 +30,10 @@ class Fuzzys_Last{
     } );
   }
   private function init_shortcodes(){
-    add_shortcode('fuzzys_last', array($this->view,'fuzzys_last_gameboard'));
+    add_shortcode('fuzzys_last', array($this,'fuzzys_last_shortcode'));
+  }
+  private function fuzzys_last_shortcode(){
+    $this->view->fuzzys_last_gameboard();
   }
   private function init_ajax(){
     add_action( 'wp_ajax_guess', array($this,'ajax_guess') );
