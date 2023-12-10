@@ -32,7 +32,7 @@ class Fuzzys_Last{
   private function init_shortcodes(){
     add_shortcode('fuzzys_last', array($this,'fuzzys_last_shortcode'));
   }
-  private function fuzzys_last_shortcode(){
+  public function fuzzys_last_shortcode(){
     $this->view->fuzzys_last_gameboard();
   }
   private function init_ajax(){
