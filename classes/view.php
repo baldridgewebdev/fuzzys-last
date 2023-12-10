@@ -12,13 +12,13 @@ class Fuzzys_Last_View{
 		for($i = 1; $i <= $word_count; $i++){
 			$html .= '<div id="fuzzy-word-'.$i.'" class="word"></div>';
 		}
-    $html = '</div>
+    $html .= '</div>
 		  <form class="fuzzy-form">
 			<div class="fuzzy-inputs"';
 		for($i = 1; $i <= $word_length; $i++){
 			$html .= '<input id="fuzzy-guess-char-'.$i.'" type="text" name="fuzzy-input'.$i.'" maxlength="1" >';
 		}
-    $html = '</div><div class="button-area">
+    $html .= '</div><div class="button-area">
           <button name="submit" class="submit">Submit</button> <button name="new-game" class="new-game">New Game</button>
 		  </div>
         </form>
