@@ -4,7 +4,7 @@ class Fuzzys_Last_View{
   function __construct(){
     
   }
-  private function fuzzys_last_gameboard(){
+  public function fuzzys_last_gameboard(){
     $html = '
     <div class="fuzzys-last">
       <div class="gameboard">
