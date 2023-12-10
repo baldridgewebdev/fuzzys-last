@@ -14,7 +14,7 @@ class Fuzzys_Last_View{
 		}
     $html .= '</div>
 		  <form class="fuzzy-form">
-			<div class="fuzzy-inputs"';
+			<div class="fuzzy-inputs">';
 		for($i = 1; $i <= $word_length; $i++){
 			$html .= '<input id="fuzzy-guess-char-'.$i.'" type="text" name="fuzzy-input'.$i.'" maxlength="1" >';
 		}
