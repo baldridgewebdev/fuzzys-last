@@ -10,7 +10,7 @@ class Fuzzys_Last_Model{
     "quirk", "razor", "shine", "tramp", "unity", "venom", "whisk", "xenon", "yearn", "zesty",
     "alive", "brave", "cocoa", "diary", "erupt", "flint", "glide", "hound", "irish", "joust",
     "koala", "lingo", "mango", "nylon", "opium", "plump", "quest", "rocky", "snare", "trace",
-    "unify", "vortex", "wharf", "xerox", "yahoo", "zilch", "agile", "blink", "cobra", "dusk",
+    "unify", "jerky", "wharf", "xerox", "yahoo", "zilch", "agile", "blink", "cobra", "dusk",
     "ember", "fjord", "grist", "havoc", "inert", "jaded", "kiosk", "lurch", "mural", "nymph",
     "overt", "prank", "quash", "relay", "skimp", "tryst", "usher", "venom", "whelp", "yodel"
   ];
@@ -19,10 +19,10 @@ class Fuzzys_Last_Model{
     $this->cookie_name = $cookie_name;
     if(!$this->load_seed_cookie()){
       $seed = $this->generate_new_seed($seed_length=5);
-      set_seed_cookie($seed);
+      $this->set_seed_cookie($seed);
       $this->seed = $this->convert_seed_to_indexs($seed);
     }
-    $this->set_game_list();
+    $this->set_game_word_list();
   }
 
   public function get_game_word_list(){
@@ -31,7 +31,7 @@ class Fuzzys_Last_Model{
   private function set_game_word_list(){
     $game_list = [];
     foreach($this->seed as $i){
-      $game_list[] = $master_word_list[$i];
+      $game_list[] = $this->master_word_list[$i];
     }
     $this->game_word_list = $game_list;
   }
@@ -49,7 +49,7 @@ class Fuzzys_Last_Model{
   private function generate_new_seed($seed_length=5){
     $seed = "";
     for($i = 0; $i < $seed_length; $i++){
-      $seed += $this->generate_seed_part();
+      $seed .= $this->generate_seed_part();
     }
     return $seed;
   }

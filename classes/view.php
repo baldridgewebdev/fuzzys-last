@@ -10,7 +10,7 @@ class Fuzzys_Last_View{
       <div class="gameboard">
         <div class="words">';
 		for($i = 1; $i <= $word_count; $i++){
-			$html .= '<div id="fuzzy-word-'.$i.'" class="word"></div>';
+			$html .= '<div id="fuzzy-word-'.$i.'" class="word" title="Word '.$i.'">5</div>';
 		}
     $html .= '</div>
 		  <form class="fuzzy-form">
