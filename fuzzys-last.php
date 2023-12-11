@@ -4,7 +4,7 @@
  * Plugin Name:       Fuzzy's Last
  * Plugin URI:        https://baldridgeweb.dev
  * Description:       A small code sample of a silly game.
- * Version:           0.1
+ * Version:           0.8
  * Author:            Jenifer
  * GitHub Plugin URI: https://github.com/baldridgewebdev/fuzzys-last
  */
